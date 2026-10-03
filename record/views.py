@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import AttendanceRecord
 
 
 def home(request):
@@ -10,7 +11,8 @@ def about(request):
 
 
 def attendance(request):
-    return render(request, 'records/attendance.html')
+    records = AttendanceRecord.objects.all().order_by('-date')
+    return render(request, 'records/attendance.html', {'records': records})
 
 
 def students(request):
