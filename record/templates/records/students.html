@@ -5,23 +5,51 @@
 {% block content %}
 
 <section class="page-section">
+
     <h1>Students</h1>
 
     <p>
-        View and manage student information in the AttenEase system.
+        View students recorded in the AttenEase system.
     </p>
 
     <div class="student-box">
+
         <h2>Student Records</h2>
 
-        <p>
-            Student information will be displayed here.
-        </p>
+        {% if students %}
 
-        <button class="button">
-            View Students
-        </button>
+            <table class="attendance-table">
+
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Student ID</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for student in students %}
+
+                    <tr>
+                        <td>{{ student.student_name }}</td>
+                        <td>{{ student.student_id }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        {% else %}
+
+            <p>No student records found.</p>
+
+        {% endif %}
+
     </div>
+
 </section>
 
 {% endblock %}

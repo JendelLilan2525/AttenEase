@@ -38,7 +38,14 @@ def attendance(request):
 
 
 def students(request):
-    return render(request, 'records/students.html')
+
+    students = AttendanceRecord.objects.all().order_by('student_name')
+
+    return render(
+        request,
+        'records/students.html',
+        {'students': students}
+    )
 
 
 def contact(request):
