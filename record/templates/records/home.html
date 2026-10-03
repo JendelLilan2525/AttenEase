@@ -1,0 +1,18 @@
+{% extends 'records/base.html' %}
+
+{% block title %}Home | AttenEase {% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Welcome to AttenEase</h1>
+    <p>
+        A simple attendance management system for student and teachers.
+    </p>
+
+    <a href="{% url 'attendance' %}" class="button"> 
+        Record Attendance
+    </a>
+</section>
+
+{% endblock %}
