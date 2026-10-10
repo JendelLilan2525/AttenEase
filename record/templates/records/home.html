@@ -1,18 +1,63 @@
 {% extends 'records/base.html' %}
 
-{% block title %}Home | AttenEase {% endblock %}
+{% block title %}Dashboard | AttenEase{% endblock %}
 
 {% block content %}
 
 <section class="hero">
     <h1>Welcome to AttenEase</h1>
+
     <p>
-        A simple attendance management system for student and teachers.
+        A simple attendance management system for students and teachers.
     </p>
 
-    <a href="{% url 'attendance' %}" class="button"> 
+    <a href="{% url 'attendance' %}" class="button">
         Record Attendance
     </a>
+</section>
+
+<section class="dashboard">
+
+    <div class="dashboard-card">
+        <h2>Attendance</h2>
+        <p>Record and view student attendance.</p>
+        <a href="{% url 'attendance' %}" class="button">
+            View Attendance
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>Students</h2>
+        <p>View student records and information.</p>
+        <a href="{% url 'students' %}" class="button">
+            View Students
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>About</h2>
+        <p>Learn about the AttenEase system.</p>
+        <a href="{% url 'about' %}" class="button">
+            Learn More
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>Contact</h2>
+        <p>View our contact information.</p>
+        <a href="{% url 'contact' %}" class="button">
+            Contact Us
+        </a>
+    </div>
+
+    <div class="dashboard-card">
+        <h2>Admin</h2>
+        <p>Manage attendance records through Django Admin.</p>
+        <a href="/admin/" class="button">
+            Open Admin
+        </a>
+    </div>
+
 </section>
 
 {% endblock %}

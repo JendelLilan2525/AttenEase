@@ -1,26 +1,27 @@
 {% load static %}
 
-<! DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        contains="width=device-width,initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{% block title %}
-            AttenEase{% endblock %}
-        </title>
- </head>
+    <title>{% block title %}AttenEase{% endblock %}</title>
 
-        <body>
-            {% include 'records/includes/navbar.html' %}
-            <main>
-                {% block content %}
-                {% endblock %}
-            </main>
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
 
-            {% include 'records/includes/footer.html' %}
+<body>
 
-        </body>
-   
+    {% include 'records/includes/navbar.html' %}
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% include 'records/includes/footer.html' %}
+
+</body>
 </html>
